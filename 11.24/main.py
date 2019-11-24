@@ -136,7 +136,7 @@ def main(mode=None):
             total_samples=len(test_data.dataset)
         ))
         print()
-        acc = test_correct/ len(test_data.dataset)  
+        acc = test_correct/ (i+1)  
       #start to save best performance model after learning rate decay to 0.01 
         if epoch > config.MILESTONES[1] and best_acc < acc:
             torch.save(net.state_dict(), checkpoint_path.format(epoch=epoch, type='best'))
